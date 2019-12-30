@@ -1,7 +1,7 @@
 
-//独立游戏分区爬虫
+//主机游戏分区爬虫
 
-const url = "https://live.bilibili.com/p/eden/area-tags?parentAreaId=6&areaId=283";
+const url = "https://live.bilibili.com/p/eden/area-tags?parentAreaId=6&areaId=236";
 //const url = "https://maoyan.com/films";
 const request = require('request');
 const cheerio = require('cheerio');
@@ -86,7 +86,7 @@ function getMovies(url) {
                         url: temp.直播链接
                     };
                     id++;
-                    let que = connection.query("INSERT INTO duli SET ?", post, function(err, results, fields) {
+                    let que = connection.query("INSERT INTO zhuji SET ?", post, function(err, results, fields) {
                         if (err) {
                             console.log(err);
                         };
