@@ -99,7 +99,7 @@ function downloadImg() {
         //获取图片名
         let imgName = imgUrlresult.split('/').pop();
         //下载图片存放到指定目录
-        let stream = fs.createWriteStream('./youku/'+imgName);
+        let stream = fs.createWriteStream('./imgs/'+imgName);
         let req = request.get(imgUrlresult); //响应流
         req.pipe(stream);
         req.on('end', function() {
