@@ -24,11 +24,11 @@ function getMovies(url) {
                 var item = $('.list li');
                 item.map(function (i, val) {
                     var movieObj = {};
-                    //电影链接
+                    //链接
                     movieObj.movieLink = "https://live.bilibili.com"+$(val).find('.room-card-ctnr').attr('href');
                     //图片链接
                     movieObj.moviePoster = $(val).find('.cover-ctnr').attr('style');
-                    //电影 名字
+                    //直播间标题
                     movieObj.movieTitle = $(val).find('.room-title').text();
                     //movieObj.movieTitle = $(val).find('.channel-detail movie-item-title').children('a').text();
                     //主播名字
@@ -71,7 +71,7 @@ function getMovies(url) {
                         user     : 'root',
                         password : 'qwer1234',
                         database : 'mysql',
-                        port: 3307
+                        port     :  3307
 
                     });
                     connection.connect();

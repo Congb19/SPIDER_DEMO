@@ -155,7 +155,6 @@ function downloadImg() {
         var pos = imgUrl.indexOf('@');
         var imgUrlresult = imgUrl.substring(21,pos);
         console.log(imgUrlresult);
-
         //获取图片名
         let imgName = imgUrlresult.split('/').pop();
         //下载图片存放到指定目录
@@ -168,17 +167,11 @@ function downloadImg() {
         req.on('error', function(e) {
             console.log("错误信息:"+ e.message)
         });
-        // }).on("error",(e)=>{
-//     console.log("获取数据失败: ${e.message}")
-
         stream.on("finish", function() {
             console.log(imgName+"文件写入成功");
             stream.end();
         });
-
-        //  console.log("开始下载图片 https:${imgUrl} --> ./imgs/${imgName}");
     } )
-
 }
 
 
